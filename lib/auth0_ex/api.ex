@@ -72,6 +72,12 @@ defmodule Auth0Ex.Api do
         |> HTTPoison.request(uri, req_body, req_header(unquote(opts[:for])), http_opts())
         |> Parser.parse()
       end
+
+      defp do_upload(path, params \\ %{}, req_body \\ %{}) do
+        build_url(path, params)
+        |> HTTPoison.post(req_body, req_header(unquote(opts[:for])), http_opts())
+        |> Parser.parse()
+      end
     end
   end
 end
