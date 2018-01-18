@@ -48,13 +48,6 @@ defmodule Auth0Ex.Management.Jobs do
     do_post("#{@path}/verification-email", %{user_id: user_id, client_id: client_id})
   end
 
-#   file = "/some/path/video.mp4"
-# HTTPoison.post(
-#       "https://api.vid.me/video/upload",
-#       {:multipart, [{:file, file, {"form-data", [name: "filedata", filename: Path.basename(file)]}, []}]},
-#       ["AccessToken": "XXXXX"]
-  # )
-
   @doc """
   Kick off a job of importing Users.  Doesn't support all the options yet
 
